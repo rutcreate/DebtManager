@@ -1,4 +1,4 @@
-package com.example.debtmanager;
+package com.example.debtmanager.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,6 +8,10 @@ import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.debtmanager.R;
+import com.example.debtmanager.R.id;
+import com.example.debtmanager.R.layout;
+import com.example.debtmanager.R.menu;
 import com.example.debtmanager.widget.DebtAdapter;
 
 public class MainActivity extends Activity {

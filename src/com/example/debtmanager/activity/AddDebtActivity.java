@@ -1,4 +1,9 @@
-package com.example.debtmanager;
+package com.example.debtmanager.activity;
+
+import com.example.debtmanager.R;
+import com.example.debtmanager.R.id;
+import com.example.debtmanager.R.layout;
+import com.example.debtmanager.provider.DatabaseHelper;
 
 import android.app.Activity;
 import android.content.ContentValues;

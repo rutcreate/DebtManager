@@ -12,8 +12,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.example.debtmanager.DatabaseHelper;
 import com.example.debtmanager.model.Debt;
+import com.example.debtmanager.provider.DatabaseHelper;
 import com.example.debtmanager.R;
 
 public class DebtAdapter extends BaseAdapter {

@@ -1,4 +1,5 @@
-package com.example.debtmanager;
+package com.example.debtmanager.provider;
+
 
 import android.content.ContentProvider;
 import android.content.ContentValues;

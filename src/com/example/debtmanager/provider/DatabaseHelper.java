@@ -1,4 +1,4 @@
-package com.example.debtmanager;
+package com.example.debtmanager.provider;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
