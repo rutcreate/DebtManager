@@ -1,0 +1,10 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="AppTheme" parent="android:Theme.Light" />
+    
+    <style name="GreenButton" parent="AppTheme">
+        <item name="android:background">#00ff00</item>
+        <item name="android:padding">0dp</item>
+    </style>
+
+</resources>
