@@ -37,9 +37,24 @@ public class MainActivity extends Activity {
 		case R.id.menu_add:
 			Intent intent = new Intent();
 			intent.setClass(this, AddDebtActivity.class);
-			startActivity(intent);
+			startActivityForResult(intent, 1);
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		if (requestCode == 1) {
+			switch (resultCode) {
+			case Activity.RESULT_OK:
+				Toast.makeText(this, "Saved.", Toast.LENGTH_LONG).show();
+				this.mAdapter.notifyDataSetChanged();
+				break;
+			default:
+				Toast.makeText(this, "Cancelled.", Toast.LENGTH_LONG).show();
+				break;
+			}
+		}
 	}
 }

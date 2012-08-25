@@ -25,6 +25,10 @@ public class DebtAdapter extends BaseAdapter {
 		super();
 		this.mContext = pContext;
 
+		this.fetchDataSource();
+	}
+	
+	private void fetchDataSource() {
 		DatabaseHelper dbHelper = new DatabaseHelper(this.mContext);
 		SQLiteDatabase db = dbHelper.getReadableDatabase();
 		Cursor cursor = db.rawQuery(
@@ -79,6 +83,12 @@ public class DebtAdapter extends BaseAdapter {
 		viewHolder.amount.setText(debt.getAmount().toString());
 
 		return convertView;
+	}
+	
+	@Override
+	public void notifyDataSetChanged() {
+		super.notifyDataSetChanged();
+		this.fetchDataSource();
 	}
 
 	private class ViewHolder {

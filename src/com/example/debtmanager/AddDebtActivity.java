@@ -34,6 +34,11 @@ public class AddDebtActivity extends Activity {
 				values.put("amount", amountInput.getText().toString());
 				final long result = db.insert("data", null, values);
 				db.close();
+				if (result == -1) {
+					AddDebtActivity.this.setResult(Activity.RESULT_CANCELED);
+				} else {
+					AddDebtActivity.this.setResult(Activity.RESULT_OK);
+				}
 				finish();
 			}
 
