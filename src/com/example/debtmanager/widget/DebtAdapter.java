@@ -37,6 +37,7 @@ public class DebtAdapter extends BaseAdapter {
 			Debt debt = new Debt(id, name, amount);
 			this.mDataSource.add(debt);
 		}
+		db.close();
 	}
 
 	@Override

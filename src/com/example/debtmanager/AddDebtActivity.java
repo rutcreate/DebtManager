@@ -1,11 +1,13 @@
 package com.example.debtmanager;
 
 import android.app.Activity;
+import android.content.ContentValues;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.Toast;
+import android.widget.EditText;
 
 public class AddDebtActivity extends Activity {
 
@@ -14,14 +16,25 @@ public class AddDebtActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		this.setContentView(R.layout.add_debt);
 
-		Button saveButton = (Button) this.findViewById(R.id.save_button);
+		final EditText nameInput = (EditText) this
+				.findViewById(R.id.name_input);
+		final EditText amountInput = (EditText) this
+				.findViewById(R.id.amount_input);
+
+		final Button saveButton = (Button) this.findViewById(R.id.save_button);
 		saveButton.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				Toast.makeText(AddDebtActivity.this,
-						"You clicked \"Save\" button", Toast.LENGTH_LONG)
-						.show();
+				DatabaseHelper dbHelper = new DatabaseHelper(
+						AddDebtActivity.this);
+				SQLiteDatabase db = dbHelper.getWritableDatabase();
+				ContentValues values = new ContentValues();
+				values.put("name", nameInput.getText().toString());
+				values.put("amount", amountInput.getText().toString());
+				final long result = db.insert("data", null, values);
+				db.close();
+				finish();
 			}
 
 		});
