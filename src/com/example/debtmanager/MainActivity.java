@@ -1,6 +1,7 @@
 package com.example.debtmanager;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -34,8 +35,9 @@ public class MainActivity extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case R.id.menu_add:
-			Toast.makeText(this, "You clicked at \"Add\" menu item",
-					Toast.LENGTH_LONG).show();
+			Intent intent = new Intent();
+			intent.setClass(this, AddDebtActivity.class);
+			startActivity(intent);
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
